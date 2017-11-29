@@ -5,7 +5,7 @@ This is an app that helps neighbors connect with each other and utilizes each ot
 How to run it: 
  1. mongod + npm start. 
  2. Open browsers in both Incognito mode and normal mode 
- 3. register for 2 new users and login
+ 3. register for 2 new users and login (some name has already been registered, please try another one if this occurs)
  4. edit profile for both accounts and submit
  5. go to add neighbor page, try a username that doesn't exist, and try the other one that exists (the one you just registered)
  6. go to the other account page and refresh add neighbor, you should be able to see a request
