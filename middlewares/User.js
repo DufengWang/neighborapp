@@ -29,6 +29,8 @@ userSchema.pre('save', function(next) {
 
 userSchema.statics.addUser = function(username, password, cb) {
   var newUser = new this({ username: username, password: password});
+  newUser.editProfile('', '', '', '', '');
+
   newUser.save(cb);
 }
 

@@ -8,6 +8,7 @@ router.get('/editProfile', function(req, res, next) {
 		if (e) throw e;
 
 		if (user) {
+
 			var firstName = user.profile.firstName;
 			var lastName = user.profile.lastName;
 			var gender = user.profile.gender;
