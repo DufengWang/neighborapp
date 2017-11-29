@@ -3,16 +3,16 @@
 This is an app that helps neighbors connect with each other and utilizes each other as a safety net.
 
 How to run it: 
-	1. mongod + npm start. 
-	2. Open browsers in both Incognito mode and normal mode 
-	3. register for 2 new users and login
-	4. edit profile for both accounts and submit
-	5. go to add neighbor page, try a username that doesn't exist, and try the other one that exists (the one you just registered)
-	6. go to the other account page and refresh add neighbor, you should be able to see a request
-	7. click on accept button will save the neighbor in contacts, or you can click decline
-	8. go to contacts you'll find the neighbor you just added (in either account), and you can check their profile by clicking on them
-	9. go to the protected page for both accounts ('/protected' endpoint)
-	10. click on SOS on either one, the other one should receive an alert
+ 1. mongod + npm start. 
+ 2. Open browsers in both Incognito mode and normal mode 
+ 3. register for 2 new users and login
+ 4. edit profile for both accounts and submit
+ 5. go to add neighbor page, try a username that doesn't exist, and try the other one that exists (the one you just registered)
+ 6. go to the other account page and refresh add neighbor, you should be able to see a request
+ 7. click on accept button will save the neighbor in contacts, or you can click on decline
+ 8. go to contacts page you'll find the neighbor you just added (in either account), and you can check their profile by clicking on them
+ 9. go to the protected page for both accounts ('/protected' endpoint)
+ 10. click on SOS on either one, the other one should receive an alert
 	
 
 MVP Features (Already Implemented):
