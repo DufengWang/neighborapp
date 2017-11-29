@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../middlewares/User');
+var User = require('../db/mongo.js');
 
 
 router.get('/:username', function (req, res, next) {

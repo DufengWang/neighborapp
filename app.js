@@ -11,7 +11,7 @@ var addNeighbor = require('./routes/addNeighbor')
 var contacts = require('./routes/contacts')
 var contactsInfo = require('./routes/contactsInfo')
 var messages = require('./routes/messages')
-var User = require('./middlewares/User')
+var User = require('./db/mongo.js')
 
 var http = require( "http" ).createServer( app );
 var io = require( "socket.io" )( http );
