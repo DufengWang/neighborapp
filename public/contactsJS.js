@@ -20,7 +20,8 @@ $(document).ready(function () {
     var html = '';
 
     for (var i = 0; i < data.length; i++) {
-      html = html + '<p>' + data[i] + '</p>';
+      // html = html + '<p>' + data[i] + '</p>';
+      html = html + "<p><a href='/protected/contacts/" + data[i] + "'>" + data[i] + "</a></p>";
       $('#container').html(html);
     }
   })
