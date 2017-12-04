@@ -22,7 +22,7 @@ $(document).ready(function () {
   })
 
   window.socket.on('addUserRequest', function (response) {
-    $('#container').html("<p>" + response + "</p>");
+    $('#wrapper').html("<p>" + response + "</p>");
   })
 
   window.socket.on('requestHandled', function (targetUser) {
@@ -37,7 +37,7 @@ $(document).ready(function () {
   	console.log(requestList);
 
   	for (var i=0; i < requestList.length; i++) {
-  		html = html + "<div id=" + requestList[i] + "><h2>" + requestList[i] + "</h2><input data-username=" + requestList[i] + " id='accept' value='ACCEPT' type='submit'>" + "</h2><input data-username=" + requestList[i] + " id='decline' value='DECLINE' type='submit'>";
+  		html = html + "<div id=" + requestList[i] + "><h2>" + requestList[i] + "</h2><input data-username=" + requestList[i] + " id='accept' class='btn btn-dark btn-sm' value='ACCEPT' type='submit'>" + "</h2><input data-username=" + requestList[i] + " id='decline' class='btn btn-light btn-sm' value='DECLINE' type='submit'>";
   	}
 
   	$('#requests').html(html);

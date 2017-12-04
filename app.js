@@ -6,12 +6,14 @@ var bodyParser = require('body-parser');
 var login = require('./routes/login')
 var register = require('./routes/register')
 var protected = require('./routes/protected')
+var profile = require('./routes/profile')
 var editProfile = require('./routes/editProfile')
 var addNeighbor = require('./routes/addNeighbor')
 var contacts = require('./routes/contacts')
 var contactsInfo = require('./routes/contactsInfo')
 var messages = require('./routes/messages')
 var User = require('./db/mongo.js')
+var checkIfLoggedIn = require('./middlewares/checkIfLoggedIn.js')
 
 var http = require( "http" ).createServer( app );
 var io = require( "socket.io" )( http );
@@ -58,12 +60,13 @@ app.get('/logout', function(req, res) {
 // For instance, the API routes require a valid key, so mount checkValidKey and apiRouter in the same call.
 app.use('/', login);
 app.use('/', register);
-app.use('/', protected);
-app.use('/protected', editProfile);
-app.use('/protected', addNeighbor);
-app.use('/protected', contacts);
-app.use('/protected/contacts', contactsInfo);
-app.use('/protected', messages);
+app.use('/', checkIfLoggedIn, protected);
+app.use('/protected', checkIfLoggedIn, profile);
+app.use('/protected/profile', checkIfLoggedIn, editProfile);
+app.use('/protected', checkIfLoggedIn, addNeighbor);
+app.use('/protected', checkIfLoggedIn, contacts);
+app.use('/protected/contacts', checkIfLoggedIn, contactsInfo);
+app.use('/protected', checkIfLoggedIn, messages);
 
 //socket.io
 

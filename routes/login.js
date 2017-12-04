@@ -17,8 +17,10 @@ router.post('/login', function(req, res) {
     } else {
       if (isRight) {
         req.session.username = username;
+        req.session.isAuthenticated = true;
         res.redirect('/protected');
       } else {
+        req.session.isAuthenticated = false;
         res.send('wrong password');
       }
     }

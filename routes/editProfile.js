@@ -3,21 +3,10 @@ var router = express.Router();
 var User = require('../db/mongo.js');
 
 // Implement the routes.
-router.get('/editProfile', function(req, res, next) {
-	User.findOne( { username: req.session.username }, function(e, user) {
-		if (e) throw e;
+router.get('/editProfile', function(req, res) {
+	console.log('point to edit profile')
 
-		if (user) {
-
-			var firstName = user.profile.firstName;
-			var lastName = user.profile.lastName;
-			var gender = user.profile.gender;
-			var homeAddress = user.profile.homeAddress;
-			var hobbies = user.profile.hobbies;
-
-			res.render('editProfile', {firstName: firstName, lastName: lastName, gender: gender, homeAddress: homeAddress, hobbies: hobbies});
-		}
-	})
+	res.render('editProfile');
 });
 
 router.post('/editProfile', function(req, res) {
