@@ -194,6 +194,102 @@ app.use('/protected', checkIfLoggedIn, messages);
     	})
     })
 
+
+    //a text has been sent and add unread amount
+    socket.on('addText', function(data) {
+        var currentUser = data.currentUser;
+        var targetUser = data.targetUser;
+        var text = data.text;
+
+        User.findOne( { username: targetUser }, function(err, user) {
+            if (err) {
+                res.send(err);
+            } else {
+                if (user) {
+                    user.addText(currentUser, text, 'incoming');
+                    user.addUnread(currentUser);
+                    var targetUserID = user.socketID;
+                    var unread = user.unread[currentUser];
+
+                    console.log('unread in addText');
+                    console.log(unread);
+
+                    User.findOne( { username: currentUser }, function(err, user) {
+                        if (err) {
+                            res.send(err);
+                        } else {
+                            var response = {text: text, targetUser: currentUser, unread: unread};
+                            user.addText(targetUser, text, 'outgoing');
+
+                            socket.broadcast.to(targetUserID).emit('textAdded', response);
+                        }
+                    })
+                }
+            }
+        })
+    })
+
+    //get socket Id upon connection
+    socket.on('socketID', function(data) {
+        var currentUser = data.currentUser;
+        var socketID = data.socketID;
+
+        User.findOne( { username: currentUser }, function(err, user) {
+            if (err) {
+                res.send(err);
+            } else {
+                if (user) {
+                    user.addSocketID(socketID);
+                }
+            }
+        })
+    })
+
+    //retrieve text
+    socket.on('retrieveText', function(data) {
+        var currentUser = data.currentUser;
+        var targetUser = data.targetUser;
+
+        User.findOne( {username: currentUser }, function(err, user) {
+            if (err) {
+                res.send(err);
+            } else {
+                if (user) {
+                    if ( user.texts ) {
+                        var texts = user.texts[targetUser];
+
+                        if (user.unread) {
+                            if (user.unread[targetUser]) {
+                                user.removeUnread(targetUser);
+                            }
+                        }
+                        socket.emit('textList', texts);
+                    }
+                }
+            }
+        })
+    })
+
+    //remove unread
+    socket.on('removeUnread', function(data) {
+        var currentUser = data.currentUser;
+        var targetUser = data.targetUser;
+
+        User.findOne( { username: currentUser }, function(err, user) {
+            if (err) {
+                res.send(err);
+            } else {
+                if (user) {
+                    if ( user.unread ) {
+                        if (user.unread[targetUser]) {
+                            user.removeUnread(targetUser);
+                        }
+                    }
+                }
+            }
+        })
+    }) 
+
   })
 
 
