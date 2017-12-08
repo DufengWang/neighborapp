@@ -146,6 +146,7 @@ userSchema.methods.removeUnread = function(targetUsername, cb) {
 }
 
 userSchema.methods.addRequest = function(username) {
+  
   if (!this.request.includes(username)) {
     this.request.push(username);
     console.log(this.username + ' added: ' + username);

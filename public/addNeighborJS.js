@@ -37,7 +37,7 @@ $(document).ready(function () {
   	console.log(requestList);
 
   	for (var i=0; i < requestList.length; i++) {
-  		html = html + "<div id=" + requestList[i] + "><h2>" + requestList[i] + "</h2><input data-username=" + requestList[i] + " id='accept' class='btn btn-dark btn-sm' value='ACCEPT' type='submit'>" + "</h2><input data-username=" + requestList[i] + " id='decline' class='btn btn-light btn-sm' value='DECLINE' type='submit'>";
+  		html = html + "<div id=" + requestList[i] + "><h2>" + requestList[i] + "</h2><input data-username=" + requestList[i] + " id='accept' class='btn btn-dark btn-sm' value='ACCEPT' type='submit'>" + "</h2><input data-username=" + requestList[i] + " id='decline' class='btn btn-light btn-sm' value='DECLINE' type='submit'></div>";
   	}
 
   	$('#requests').html(html);
