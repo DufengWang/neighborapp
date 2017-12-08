@@ -23,6 +23,8 @@ $(document).ready(function () {
       // html = html + '<p>' + data[i] + '</p>';
       html = html + "<p><a href='/protected/contacts/" + data[i] + "'>" + data[i] + "</a></p>";
       $('#container').html(html);
+
+      
     }
   })
 });

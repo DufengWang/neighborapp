@@ -10,7 +10,7 @@ router.get('/register', function (req, res) {
 router.post('/register', function(req, res) {
   User.addUser(req.body.username, req.body.password, function(err) {
     if (err) res.send('error' + err);
-    else res.send('new user registered with username ' + req.body.username);
+    else res.send('Registration Successful: ' + req.body.username);
   });
 });
 

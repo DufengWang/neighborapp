@@ -22,7 +22,8 @@ $(document).ready(function () {
   })
 
   window.socket.on('addUserRequest', function (response) {
-    $('#wrapper').html("<p>" + response + "</p>");
+    // $('#wrapper').html("<p>" + response + "</p>");
+    $('#wrapper').html("<div class='alert alert-secondary' role='alert'>" + response + "</div>")
   })
 
   window.socket.on('requestHandled', function (targetUser) {

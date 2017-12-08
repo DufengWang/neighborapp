@@ -15,15 +15,30 @@
 
 	<body>
 
-	<h1>User Register</h1>
-	<form method="post">
-	  <p>Username<br>
-	  <input type="text" name="username"></p>
-	  <p>Password<br>
-	  <input type="password" name="password"></p>
-	  <p><input type="submit"></p>
-	</form>
-	<a href="/login">Login</a>
+		<div class="container">
+				<h1>User Register</h1>
+
+				<form method="post">
+	<!-- 			  <p>Username<br>
+				  <input class="input-group-addon" type="text" name="username"></p> -->
+
+				  <div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Username</span>
+					  <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+				  </div>
+
+				  <div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Password</span>
+					  <input type="text" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+				  </div>
+
+	<!-- 			  <p>Password<br>
+				  <input type="password" name="password"></p> -->
+				  
+				  <p><input class="btn btn-primary" type="submit" value="Register"></p>
+				  <a class="btn btn-light" href="/login">Login</a>
+				</form>
+			</div>
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
