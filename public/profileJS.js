@@ -13,4 +13,8 @@ $(document).ready(function () {
     })
   });
 
+  window.socket.on('userSOS', function (username) {
+    alert(username + ' needs help!!!');
+  })
+
 });

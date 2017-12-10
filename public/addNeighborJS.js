@@ -14,6 +14,10 @@ $(document).ready(function () {
     window.socket.emit('clientConnected', currentUsername);
   });
 
+  window.socket.on('userSOS', function (username) {
+    alert(username + ' needs help!!!');
+  })
+
   $('#button').on('click', function() {
     var targetUsername = $('#input').val();
     var currentUsername = $('#requests').data('username');

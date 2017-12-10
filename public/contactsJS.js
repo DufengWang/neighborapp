@@ -16,6 +16,10 @@ $(document).ready(function () {
     window.socket.emit('getContacts', currentUser);
   });
 
+  window.socket.on('userSOS', function (username) {
+    alert(username + ' needs help!!!');
+  })
+
   window.socket.on('contactList', function(data) {
     var html = '';
 

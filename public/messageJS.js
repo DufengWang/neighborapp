@@ -16,6 +16,10 @@ $(document).ready(function () {
     window.socket.emit('socketID', data);
   });
 
+  window.socket.on('userSOS', function (username) {
+    alert(username + ' needs help!!!');
+  })
+
 	$.ajax({
 			type: 'POST',
 			url: '/protected/messages',
