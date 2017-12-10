@@ -5,9 +5,9 @@
 $(document).ready(function () {
   // This code connects to your server via websocket;
   // please don't modify it.
-  window.socketURL = 'http://localhost:8080';
+  // window.socketURL = 'http://localhost:8080';
 
-  window.socket = io(window.socketURL);
+  window.socket = io("/");
 
   window.socket.on('connect', function () {
   	var currentUsername = $('#requests').data('username');

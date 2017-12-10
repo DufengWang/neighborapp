@@ -4,9 +4,9 @@
 
 $(document).ready(function () {
 
-  window.socketURL = 'http://localhost:8080';
+  // window.socketURL = 'http://localhost:8080';
 
-  window.socket = io(window.socketURL);
+  window.socket = io("/".socketURL);
 
   window.socket.on('connect', function () {
     console.log('messages page reached');

@@ -8,9 +8,9 @@ $(document).ready(function () {
 
   $('[data-toggle="popover"]').popover();
 
-  window.socketURL = 'http://localhost:8080';
+  // window.socketURL = 'http://localhost:8080';
 
-  window.socket = io(window.socketURL);
+  window.socket = io('/');
 
   window.socket.on('connect', function () {
     console.log('Connected to server!');
