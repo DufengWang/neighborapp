@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+  window.socket = io("/");
+
   $("#editProfile").on('click', function(){
     console.log('button clicked');
     $.ajax({

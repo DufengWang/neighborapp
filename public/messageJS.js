@@ -1,10 +1,4 @@
-// This file contains client (aka browser) side code. Please don't modify the below line;
-// it is a flag for our linter.
-/* global $, io */
-
 $(document).ready(function () {
-
-  // window.socketURL = 'http://localhost:8080';
 
   window.socket = io("/".socketURL);
 
