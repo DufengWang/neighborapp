@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  
+
   window.socket = io("/");
 
   window.socket.on('connect', function () {
@@ -19,7 +19,6 @@ $(document).ready(function () {
   })
 
   window.socket.on('addUserRequest', function (response) {
-    // $('#wrapper').html("<p>" + response + "</p>");
     $('#wrapper').html("<div class='alert alert-secondary' role='alert'>" + response + "</div>")
   })
 

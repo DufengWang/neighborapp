@@ -1,4 +1,4 @@
-$(document).ready(function () {
+s$(document).ready(function () {
 
   window.socket = io("/".socketURL);
 
@@ -39,8 +39,6 @@ $(document).ready(function () {
 							unreadAmount = unread[user];
 						}
 					}
-
-					// var text = "<div class='card' style='width: 20rem;'><div class='card-body'><h4 class='card-title'>" + user + "</h4><p class='ard-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p></div></div>"
 
 					if ( Number(i) === 0 ) {
 

@@ -18,8 +18,7 @@
 			<h1>Welcome, <%= username %></h1>
 			<div id="nav" data-username=<%= username %>>
 			  <p><button onclick="window.location.href='/protected/profile'" type="button" class="btn btn-outline-info">Profile</button></p>
-<!-- 			  <p><button onclick="window.location.href='/protected/whoIsAround'" type="button" class="btn btn-outline-info">Check Which Neighbors Are Home</button></p>
- -->			  <p><button onclick="window.location.href='/protected/addNeighbor'" type="button" class="btn btn-outline-info">Add Neighbor (<%= request %>)</button></p>
+			  <p><button onclick="window.location.href='/protected/addNeighbor'" type="button" class="btn btn-outline-info">Add Neighbor (<%= request %>)</button></p>
 			  <p><button onclick="window.location.href='/protected/contacts'" type="button" class="btn btn-outline-info">Contacts</button></p>
 			  <p><button onclick="window.location.href='/protected/messages'" type="button" class="btn btn-outline-info">Messages</button></p>
 			  <button id="submission" type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="SOS Sent Out" data-content="Your neighbors will help you out ASAP!">SOS</button>
