@@ -17,7 +17,10 @@ var checkIfLoggedIn = require('./middlewares/checkIfLoggedIn.js')
 
 var http = require( "http" ).createServer( app );
 var io = require( "socket.io" )( http );
-http.listen(8080, "127.0.0.1");
+const port = process.env.PORT || 8080
+http.listen(port, () => {
+    console.log('listening on ' + port)
+});
 
 // Serve static pages
 app.engine('html', require('ejs').__express);
